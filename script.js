@@ -1,4 +1,4 @@
-// Countdown Timer
+// Countdown Timer with Progress Bar
 const eventDate = new Date("June 12, 2025 09:00:00").getTime();
 
 function updateCountdown() {
@@ -10,7 +10,13 @@ function updateCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // Update progress bar
+    const totalDuration = eventDate - new Date("January 1, 2025").getTime();
+    const elapsed = new Date().getTime() - new Date("January 1, 2025").getTime();
+    const progress = (elapsed / totalDuration) * 100;
+    document.getElementById("progress").style.width = `${progress}%`;
 
     if (distance < 0) {
         clearInterval(countdownInterval);
@@ -28,9 +34,14 @@ document.getElementById("rsvp-form").addEventListener("submit", function(event) 
     alert(`Thanks for RSVP'ing, ${name} from team ${team}!`);
 });
 
-// Handle Poll form submission
+// Poll Handling (Simple Example)
 document.getElementById("poll-form").addEventListener("submit", function(event) {
     event.preventDefault();
     const robot = document.getElementById("robot").value;
-    alert(`Thanks for voting for ${robot}!`);
+    document.getElementById("poll-results").innerHTML = `<p>You voted for ${robot}!</p>`;
 });
+
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
