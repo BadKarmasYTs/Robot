@@ -1,44 +1,79 @@
-/* Basic Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f2f5;
     color: #333;
+    transition: background-color 0.3s ease;
 }
 
 header {
     background-color: #008CBA;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 section {
-    padding: 20px;
+    padding: 40px;
     margin: 20px 0;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     color: #008CBA;
+    font-size: 2rem;
 }
 
-/* Countdown Timer */
 #timer {
-    font-size: 2em;
+    font-size: 3rem;
     font-weight: bold;
 }
 
+#progress {
+    height: 10px;
+    background-color: #008CBA;
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 /* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
 .gallery-item {
-    margin: 10px;
-    padding: 10px;
     background-color: #f0f0f0;
+    padding: 20px;
     border-radius: 8px;
-    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 /* Poll */
@@ -48,8 +83,8 @@ form {
 
 select, input[type="text"], button {
     padding: 10px;
-    margin-top: 5px;
     width: 100%;
+    margin-top: 10px;
 }
 
 button {
@@ -66,8 +101,23 @@ button:hover {
 /* Sponsors */
 .sponsor-logo {
     margin: 10px;
-    padding: 10px;
+    padding: 15px;
     background-color: #e0e0e0;
     border-radius: 8px;
     display: inline-block;
+    text-align: center;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+body.dark-mode section {
+    background-color: #333;
+}
+
+body.dark-mode h2 {
+    color: #ffcc00;
 }
