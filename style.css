@@ -1,0 +1,73 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #008CBA;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #008CBA;
+}
+
+/* Countdown Timer */
+#timer {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Gallery */
+.gallery-item {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Poll */
+form {
+    margin-top: 10px;
+}
+
+select, input[type="text"], button {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f6b;
+}
+
+/* Sponsors */
+.sponsor-logo {
+    margin: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    display: inline-block;
+}
