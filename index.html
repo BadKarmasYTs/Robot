@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics Meet Countdown</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Header Section -->
     <header>
-        <h1>Robotics Meet Countdown</h1>
+        <div class="navbar">
+            <h1>Robotics Meet Countdown</h1>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+        </div>
     </header>
 
-    <!-- Countdown Timer -->
     <section id="countdown">
-        <h2>Time Left Until Event</h2>
-        <div id="timer"></div>
+        <div id="timer-container">
+            <h2>Time Left Until Event</h2>
+            <div id="timer"></div>
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Event Details -->
     <section id="event-details">
         <h2>Event Details</h2>
         <p><strong>Date:</strong> June 12, 2025</p>
@@ -27,7 +32,6 @@
         <p><strong>Schedule:</strong> 9:00 AM - 5:00 PM</p>
     </section>
 
-    <!-- RSVP/Registration -->
     <section id="rsvp">
         <h2>RSVP for the Event</h2>
         <form id="rsvp-form">
@@ -39,15 +43,23 @@
         </form>
     </section>
 
-    <!-- Gallery -->
     <section id="gallery">
         <h2>Event Highlights</h2>
-        <div class="gallery-item">Photo/Video 1</div>
-        <div class="gallery-item">Photo/Video 2</div>
-        <div class="gallery-item">Photo/Video 3</div>
+        <div class="gallery-container">
+            <div class="gallery-item">Photo/Video 1</div>
+            <div class="gallery-item">Photo/Video 2</div>
+            <div class="gallery-item">Photo/Video 3</div>
+        </div>
     </section>
 
-    <!-- Polls -->
+    <section id="live-updates">
+        <h2>Live Updates</h2>
+        <div id="update-feed">
+            <p><strong>10:00 AM:</strong> Event officially starts!</p>
+            <p><strong>11:00 AM:</strong> First round begins.</p>
+        </div>
+    </section>
+
     <section id="polls">
         <h2>Vote for Your Favorite Robot Design</h2>
         <form id="poll-form">
@@ -59,19 +71,9 @@
             </select>
             <button type="submit">Vote</button>
         </form>
+        <div id="poll-results"></div>
     </section>
 
-    <!-- Team Spotlight -->
-    <section id="team-spotlight">
-        <h2>Team Spotlight</h2>
-        <div id="team-list">
-            <p>Team A: Robotic Arm Design</p>
-            <p>Team B: Autonomous Vehicle</p>
-            <p>Team C: AI-Powered Robot</p>
-        </div>
-    </section>
-
-    <!-- Timeline -->
     <section id="timeline">
         <h2>Event Timeline</h2>
         <ul>
@@ -81,7 +83,6 @@
         </ul>
     </section>
 
-    <!-- Sponsors -->
     <section id="sponsors">
         <h2>Event Sponsors</h2>
         <div class="sponsor-logo">Sponsor 1</div>
