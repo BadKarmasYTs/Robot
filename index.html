@@ -6,6 +6,7 @@
     <title>Robotics Meet Countdown</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 </head>
 <body>
     <header>
@@ -16,9 +17,9 @@
     </header>
 
     <section id="countdown">
-        <div id="timer-container">
+        <div class="countdown-container">
             <h2>Time Left Until Event</h2>
-            <div id="timer"></div>
+            <div id="timer" class="countdown-timer"></div>
             <div class="progress-bar">
                 <div id="progress"></div>
             </div>
@@ -35,20 +36,21 @@
     <section id="rsvp">
         <h2>RSVP for the Event</h2>
         <form id="rsvp-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="team">Team:</label>
-            <input type="text" id="team" name="team">
-            <button type="submit">RSVP</button>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="text" id="team" name="team" placeholder="Team Name">
+            <button type="submit">RSVP Now</button>
         </form>
     </section>
 
     <section id="gallery">
         <h2>Event Highlights</h2>
-        <div class="gallery-container">
-            <div class="gallery-item">Photo/Video 1</div>
-            <div class="gallery-item">Photo/Video 2</div>
-            <div class="gallery-item">Photo/Video 3</div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Photo/Video 1</div>
+                <div class="swiper-slide">Photo/Video 2</div>
+                <div class="swiper-slide">Photo/Video 3</div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -63,7 +65,6 @@
     <section id="polls">
         <h2>Vote for Your Favorite Robot Design</h2>
         <form id="poll-form">
-            <label for="robot">Select Robot:</label>
             <select id="robot" name="robot">
                 <option value="robot1">Robot 1</option>
                 <option value="robot2">Robot 2</option>
@@ -76,11 +77,19 @@
 
     <section id="timeline">
         <h2>Event Timeline</h2>
-        <ul>
-            <li>Registration Deadline - May 30, 2025</li>
-            <li>First Round - June 12, 2025, 10:00 AM</li>
-            <li>Final Round - June 12, 2025, 3:00 PM</li>
-        </ul>
+        <div class="timeline-container">
+            <div class="timeline-item">Registration Deadline - May 30, 2025</div>
+            <div class="timeline-item">First Round - June 12, 2025, 10:00 AM</div>
+            <div class="timeline-item">Final Round - June 12, 2025, 3:00 PM</div>
+        </div>
+    </section>
+
+    <section id="map">
+        <h2>Event Location</h2>
+        <div id="map-container">
+            <!-- Embed Google Map or your preferred map service here -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130167.30853767431!2d-86.44985420886344!3d41.72157898429458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881132c44a61d313%3A0x974ad9b36fa33204!2sSouth%20Bend%2C%20IN!5e0!3m2!1sen!2sus!4v1746576411627!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
     </section>
 
     <section id="sponsors">
@@ -90,6 +99,11 @@
         <div class="sponsor-logo">Sponsor 3</div>
     </section>
 
+    <footer>
+        <p>&copy; 2025 Robotics Meet. All rights reserved.</p>
+    </footer>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
