@@ -1,109 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robotics Meet Countdown</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KS Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      max-width: 800px;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      color: #aaa;
+      max-width: 600px;
+    }
+
+    .section {
+      margin-top: 5rem;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid #222;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: #222;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+      }
+
+      .section {
+        padding-bottom: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <h1>Robotics Meet Countdown</h1>
-            <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
-        </div>
-    </header>
+  <header>
+    <div class="logo">KS Studios</div>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="countdown">
-        <div class="countdown-container">
-            <h2>Time Left Until Event</h2>
-            <div id="timer" class="countdown-timer"></div>
-            <div class="progress-bar">
-                <div id="progress"></div>
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <h1>We Build Top-Tier Roblox Experiences</h1>
+    <p>From chaos brawlers to immersive simulators, KS Studios delivers games players remember.</p>
+  </section>
 
-    <section id="event-details">
-        <h2>Event Details</h2>
-        <p><strong>Date:</strong> June 12, 2025</p>
-        <p><strong>Location:</strong> Robotics Arena</p>
-        <p><strong>Schedule:</strong> 9:00 AM - 5:00 PM</p>
-    </section>
+  <section class="section" id="games">
+    <h2>Our Games</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Melee Mayhem</h3>
+        <p>Fast-paced push-or-die chaos with ragdolls and explosions.</p>
+      </div>
+      <div class="card">
+        <h3>Dig to Riches</h3>
+        <p>Dig deep, find treasure, and upgrade your way to wealth.</p>
+      </div>
+      <div class="card">
+        <h3>Ad Tycoon</h3>
+        <p>Earn cash and advertise your creations on billboards.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="rsvp">
-        <h2>RSVP for the Event</h2>
-        <form id="rsvp-form">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="text" id="team" name="team" placeholder="Team Name">
-            <button type="submit">RSVP Now</button>
-        </form>
-    </section>
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>KS Studios is a Roblox development team focused on building games that look clean, play smooth, and feel addicting. Every project is built with polish and love.</p>
+  </section>
 
-    <section id="gallery">
-        <h2>Event Highlights</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Photo/Video 1</div>
-                <div class="swiper-slide">Photo/Video 2</div>
-                <div class="swiper-slide">Photo/Video 3</div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Want to collab or ask something? Reach out via our socials or Discord: <strong>@KSDevTeam</strong></p>
+  </section>
 
-    <section id="live-updates">
-        <h2>Live Updates</h2>
-        <div id="update-feed">
-            <p><strong>10:00 AM:</strong> Event officially starts!</p>
-            <p><strong>11:00 AM:</strong> First round begins.</p>
-        </div>
-    </section>
-
-    <section id="polls">
-        <h2>Vote for Your Favorite Robot Design</h2>
-        <form id="poll-form">
-            <select id="robot" name="robot">
-                <option value="robot1">Robot 1</option>
-                <option value="robot2">Robot 2</option>
-                <option value="robot3">Robot 3</option>
-            </select>
-            <button type="submit">Vote</button>
-        </form>
-        <div id="poll-results"></div>
-    </section>
-
-    <section id="timeline">
-        <h2>Event Timeline</h2>
-        <div class="timeline-container">
-            <div class="timeline-item">Registration Deadline - May 30, 2025</div>
-            <div class="timeline-item">First Round - June 12, 2025, 10:00 AM</div>
-            <div class="timeline-item">Final Round - June 12, 2025, 3:00 PM</div>
-        </div>
-    </section>
-
-    <section id="map">
-        <h2>Event Location</h2>
-        <div id="map-container">
-            <!-- Embed Google Map or your preferred map service here -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130167.30853767431!2d-86.44985420886344!3d41.72157898429458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x881132c44a61d313%3A0x974ad9b36fa33204!2sSouth%20Bend%2C%20IN!5e0!3m2!1sen!2sus!4v1746576411627!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-    </section>
-
-    <section id="sponsors">
-        <h2>Event Sponsors</h2>
-        <div class="sponsor-logo">Sponsor 1</div>
-        <div class="sponsor-logo">Sponsor 2</div>
-        <div class="sponsor-logo">Sponsor 3</div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Robotics Meet. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <footer>
+    &copy; 2025 KS Studios. All rights reserved.
+  </footer>
 </body>
 </html>
