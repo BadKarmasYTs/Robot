@@ -26,13 +26,10 @@ function updateCountdown() {
 
 const countdownInterval = setInterval(updateCountdown, 1000);
 
-// Handle RSVP form submission
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const team = document.getElementById("team").value;
-    alert(`Thanks for RSVP'ing, ${name} from team ${team}!`);
-});
+// Dark Mode Toggle
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
 
 // Poll Handling (Simple Example)
 document.getElementById("poll-form").addEventListener("submit", function(event) {
@@ -40,8 +37,3 @@ document.getElementById("poll-form").addEventListener("submit", function(event) 
     const robot = document.getElementById("robot").value;
     document.getElementById("poll-results").innerHTML = `<p>You voted for ${robot}!</p>`;
 });
-
-// Dark Mode Toggle
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-}
